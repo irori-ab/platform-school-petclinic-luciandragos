@@ -15,11 +15,11 @@ jobs:
           cache: maven
       
       - name: Run Tests with Maven
-        run: ./mvnw test -DskipTests=false
+        run: ./mvnw test
       
       - name: Build with Maven, generate container image and push to GHCR
         run: >
-          ./mvnw -X -B package
+          ./mvnw -B package
           -Dspring-boot.build-image.imageName=ghcr.io/${{ github.repository }}:latest
           -Dspring-boot.build-image.publish=true
           -Ddocker.publishRegistry.username=${{ github.actor }}
