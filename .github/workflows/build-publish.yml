@@ -15,7 +15,7 @@ jobs:
           cache: maven
       
       - name: Run Tests with Maven
-        run: ./mvnw test
+        run: ./mvnw test -DskipTests=false
       
       - name: Build with Maven, generate container image and push to GHCR
         run: >
