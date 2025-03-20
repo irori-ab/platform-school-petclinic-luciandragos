@@ -32,7 +32,7 @@ spec:
          - name: ghcr-secret
       containers:
         - name: workload
-          image: ghcr.io/irori-ab/platform-school-petclinic-luciandragos:latest
+          image: ghcr.io/platform-school-petclinic-luciandragos:latest
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
