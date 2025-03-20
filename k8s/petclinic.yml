@@ -29,7 +29,7 @@ spec:
         app: petclinic
     spec:
       imagePullSecrets:
-         - name: ghcr-secret
+         - name: ghcr-login-secret
       containers:
         - name: workload
           image: ghcr.io/platform-school-petclinic-luciandragos:latest
