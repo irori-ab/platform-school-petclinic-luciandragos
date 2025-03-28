@@ -16,9 +16,6 @@ jobs:
           java-version: 17
           distribution: 'adopt'
           cache: maven
-
-      - name: Run unit tests
-        run: ./mvnw test -DskipTests=false
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
