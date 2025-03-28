@@ -20,6 +20,6 @@ jobs:
       - name: Secret Scanning
         uses: trufflesecurity/trufflehog@main
         with:
-          base: main
+          base: add-secret
           # extra_args: --results=verified,unknown
-          extra_args: "./"
+          # extra_args: "./"
