@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -20,4 +21,6 @@ jobs:
       - name: Secret Scanning
         uses: trufflesecurity/trufflehog@main
         with:
-          fetch-depth: 0
+          path: "https://github.com/irori-ab/platform-school-petclinic-luciandragos"
+          base: ""
+          head: ${{ github.ref_name }}
