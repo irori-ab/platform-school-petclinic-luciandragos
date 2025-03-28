@@ -23,3 +23,14 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           base: main
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: 'fs' # filesystem mode
+          scan-ref: '.'
+          format: 'table'
+          exit-code: '1' # fail pipeline on detected error
+          scanners: 'vuln,misconfig' # use these two scanner categories
+          severity: 'CRITICAL,HIGH,MEDIUM' # skip UNKNOWN and LOW
+          skip-dirs: '.devcontainer' # ignore this directory
