@@ -25,4 +25,4 @@ jobs:
         with:
           base: main
           # extra_args: --results=verified,unknown
-          extra_args: extra_args: "./"
+          extra_args: "./"
