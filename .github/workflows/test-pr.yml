@@ -20,6 +20,4 @@ jobs:
       - name: Secret Scanning
         uses: trufflesecurity/trufflehog@main
         with:
-          path: "https://github.com/irori-ab/platform-school-petclinic-luciandragos"
-          base: ""
-          head: ${{ github.ref_name }}
+          fetch-depth: 0
