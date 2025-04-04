@@ -97,6 +97,12 @@
       <scope>runtime</scope>
     </dependency>
 
+    <!-- Prometheus -->
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-prometheus</artifactId>
+    </dependency>
+
     <!-- Caching -->
     <dependency>
       <groupId>javax.cache</groupId>
