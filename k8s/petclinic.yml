@@ -1,12 +1,29 @@
 ---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: petclinic
+spec:
+  selector:
+    matchLabels:
+      app: petclinic
+  endpoints:
+  - port: http
+    path: /actuator/prometheus
+    interval: 15s
+
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: petclinic
+  labels:
+    app: petclinic
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 8080
   selector:
     app: petclinic
@@ -42,7 +59,10 @@ spec:
             - name: SPRING_APPLICATION_JSON
               value: |
                 {
-                  "management.endpoint.health.probes.add-additional-paths": true
+                  "management.endpoint.health.probes.add-additional-paths": true,
+                  "management.endpoints.web.exposure.include": "*",
+                  "management.endpoints.web.base-path": "/actuator",
+                  "management.endpoint.prometheus.enabled": true
                 }
           ports:
             - name: http
