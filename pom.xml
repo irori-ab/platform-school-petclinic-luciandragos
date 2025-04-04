@@ -103,6 +103,22 @@
       <artifactId>micrometer-registry-prometheus</artifactId>
     </dependency>
 
+    <!-- Tracing -->
+    <dependency>
+      <groupId>io.opentelemetry.instrumentation</groupId>
+      <artifactId>opentelemetry-spring-boot-starter</artifactId>
+    </dependency>
+      <dependency> <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-otlp</artifactId>
+    </dependency>
+
+    <!-- JSON logs -->
+    <dependency>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <version>8.0</version> 
+    </dependency>
+    
     <!-- Caching -->
     <dependency>
       <groupId>javax.cache</groupId>
